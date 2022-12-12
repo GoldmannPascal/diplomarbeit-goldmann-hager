@@ -1,0 +1,52 @@
+= Diplomarbeit
+Goldmann Pascal, Hager Sebastian
+1.0, 2022-12-01
+ifndef::imagesdir[:imagesdir: images]
+ifndef::backend[:backend: html5]
+:icons: font
+
+== Kennenlernen
+
+* Goldmann Pascal
+* Hager Sebastion
+* IT-Medientechnik an der HTL Leonding
+
+== Unsere Kenntnisse
+
+* Java (Maven, Quarkus, ...)
+* PHP/HTML/CSS/JS
+* GitHub
+* Docker
+* Swift
+* SQL
+* Adobe Photoshop,- Illustrator,- Premier Pro,- ...
+* Cinema 4D
+* Microsoft Word,- Powerpoint,- Excel
+
+== Fragen
+
+Zweierteam bzw. Praktikum ja/nein?
+Verwendete Technologien für Projekt?
+Programmieranteil am Projekt?
+Bewerbungsschreiben/Lebenslauf?
+Persönliches Gespräch?
+
+prozess der stahlerzeugung
+mathematische modelle
+hochofen
+material wird innen immer weniger
+temperaturmessungen mit eingemauert
+modell über temperaturmessungen berechnen
+außen und innen temperatur berechnungen
+man kann nich reinschauen etc
+nur berechnen
+3d oberfläche
+vtk output derzeit
+welche anderen möglichkeiten gibts
+erster prototyp
+kann man mit three js irgendwas machen
+output files in three.js oder ... darstellen
+
+vm mit derzeitiger visualisierung
+
+test
