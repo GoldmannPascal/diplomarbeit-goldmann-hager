@@ -8,5 +8,5 @@ gh-pages/
 .idea/
 *.iml
 .DS_Store
-.env
+*.env
 *.zip
