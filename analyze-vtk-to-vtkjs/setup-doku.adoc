@@ -1,3 +1,22 @@
 in this demo I try to embed a .vtk file into a small webapp with vtk.js
 
+==== links
 * https://github.com/Kitware/vtk-js/issues/668
+
+you have to store the .vtk file in an ascii format bin not working
+
+==== project set up
+
+steps to set up and run the project
+
+* npm install (install all node_modules)
+* npm run start (starting the app at "localhost:8080")
+
+==== problems and notes
+
+the given .vtk from the blast furnace cant not be interpreted by vtkjs +
+the problem is that *DATASET UNSTRUCTURED_GRID* is unhandled +
+
+there is also another demo with a sphere +
+the dataset of it is: *DATASET POLYDATA* +
+the reason why he cant handle the first named dataset is, because there are also volumetric data in the file
