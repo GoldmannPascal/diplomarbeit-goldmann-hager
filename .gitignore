@@ -10,3 +10,4 @@ gh-pages/
 .DS_Store
 .env
 *.zip
+node_modules/
