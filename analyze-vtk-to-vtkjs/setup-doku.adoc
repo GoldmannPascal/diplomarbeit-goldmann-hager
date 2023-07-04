@@ -1,0 +1,3 @@
+in this demo I try to embed a .vtk file into a small webapp with vtk.js
+
+* https://github.com/Kitware/vtk-js/issues/668
