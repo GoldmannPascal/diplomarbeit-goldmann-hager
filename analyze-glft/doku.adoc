@@ -1,1 +1,10 @@
 https://sbcode.net/threejs/loaders-gltf/
+
+to start the demo you need to do the following commmands:
+
+* npm install (install node_modules)
+* npm run dev (starting the app)
+
+
+the gltf files are stored in /dist/client/models
+

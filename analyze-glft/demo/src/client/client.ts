@@ -4,21 +4,39 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import Stats from 'three/examples/jsm/libs/stats.module'
 
 const scene = new THREE.Scene()
+scene.background = new THREE.Color()
 scene.add(new THREE.AxesHelper(5))
 
 // const light = new THREE.SpotLight();
-// light.position.set(5, 5, 5)
+// light.position.set(0, 0, 0)
 // scene.add(light);
+// Ambient light
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+scene.add(ambientLight);
+
+// Directional light
+const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+directionalLight.position.set(0, 1, 0); // Adjust the position of the light
+directionalLight.castShadow = true;
+scene.add(directionalLight);
+
+// Set up shadow properties for the directional light
+directionalLight.shadow.mapSize.width = 2048;
+directionalLight.shadow.mapSize.height = 2048;
+directionalLight.shadow.bias = -0.003;
+
+
+
 
 const camera = new THREE.PerspectiveCamera(
-    75,
+    85,
     window.innerWidth / window.innerHeight,
     0.1,
     1000
 )
 camera.position.z = 2
 
-const renderer = new THREE.WebGLRenderer()
+const renderer = new THREE.WebGLRenderer({alpha: true})
 // renderer.physicallyCorrectLights = true //deprecated
 renderer.useLegacyLights = false //use this instead of setting physicallyCorrectLights=true property
 renderer.shadowMap.enabled = true
@@ -30,15 +48,20 @@ const controls = new OrbitControls(camera, renderer.domElement)
 controls.enableDamping = true
 
 const loader = new GLTFLoader()
+//models/blast-furnace.gltf
 loader.load(
-    'models/monkey.glb',
+    'models/blast-furnace.gltf',
     function (gltf) {
+        gltf.scene.scale.set(0.1, 0.1, 0.1)
+        gltf.scene.position.set(0, 0, -2)
         gltf.scene.traverse(function (child) {
             if ((child as THREE.Mesh).isMesh) {
                 const m = child as THREE.Mesh
                 m.receiveShadow = true
                 m.castShadow = true
+                console.log('first')
             }
+
             if ((child as THREE.Light).isLight) {
                 const l = child as THREE.Light
                 l.castShadow = true
@@ -48,12 +71,15 @@ loader.load(
                 l.shadow.mapSize.width = 2048
                 // @ts-ignore
                 l.shadow.mapSize.height = 2048
+                console.log('second')
             }
+
         })
         scene.add(gltf.scene)
     },
     (xhr) => {
         console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
+        console.log('loading model')
     },
     (error) => {
         console.log(error)
