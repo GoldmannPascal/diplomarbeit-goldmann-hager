@@ -27,7 +27,7 @@ const renderWindow = fullScreenRenderer.getRenderWindow();
 // ----------------------------------------------------------------------------
 
 const reader = vtkHttpDataSetReader.newInstance({ fetchGzip: true });
-reader.setUrl(`model/hochofen.vtp`).then(() => {
+reader.setUrl(`model/vtk.gltf`).then(() => {
     reader.loadData().then(() => {
         renderer.resetCamera();
         renderWindow.render();
