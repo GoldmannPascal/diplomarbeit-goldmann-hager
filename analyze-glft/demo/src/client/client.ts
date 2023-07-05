@@ -50,7 +50,7 @@ controls.enableDamping = true
 const loader = new GLTFLoader()
 //models/blast-furnace.gltf
 loader.load(
-    'models/blast-furnace.gltf',
+    'models/blast.gltf',
     function (gltf) {
         gltf.scene.scale.set(0.1, 0.1, 0.1)
         gltf.scene.position.set(0, 0, -2)

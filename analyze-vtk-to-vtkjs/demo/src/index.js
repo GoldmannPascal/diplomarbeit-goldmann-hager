@@ -29,11 +29,12 @@ const reader = vtkPolyDataReader.newInstance();
 //url for the vtk file
 // var filename = 'blast.vtk';
 // var vtkUrl = `http://${location.host}/modules/${filename}`;
-const url = 'modules/sphere.vtk'
-// const url = 'modules/blast-furnace.vtk'
+const sphereUrl = 'modules/sphere.vtk'
+const furnaceUrl = 'modules/blast-furnace.vtk'
 
 
-reader.setUrl(url).then(() => {
+
+reader.setUrl(furnaceUrl).then(() => {
 
     const polydata = reader.getOutputData(0);
     const mapper = vtkMapper.newInstance();
