@@ -1,0 +1,14 @@
+small doku about the three.js demo +
+
+iam trying to create a small demo with three.js to show a .glb file which is filled with volume
+
+==== project setup
+iam using node.js in this project
+
+
+* npm install (get all node packages)
+* npm run start (starting project at "localhost:8080")
+
+* all 3d models are in *dist/client/models*
+
+
